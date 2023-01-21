@@ -1,0 +1,5 @@
+mkdir -p tmp/.tasks/bush/one
+cd tmp
+ls -alh -R
+mv .tasks/bash/one .tasks/one
+rm -r .tasks/bash

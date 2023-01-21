@@ -1,7 +1,7 @@
 import requests
 
 
-for town in ['Хабаровск', 'Уфа', 'Нижний Новгород', 'Калининград']:
+for town in ['Барнаул', 'Мелеуз', 'Йошкар-Ола', 'Благовещенск']:
     geocoder_request = f"https://geocode-maps.yandex.ru/1.x/?apikey=40d1649f-0493-4b70-98ba-98533de7710b&geocode={town}&format=json"
 
     # Выполняем запрос.
@@ -14,7 +14,7 @@ for town in ['Хабаровск', 'Уфа', 'Нижний Новгород', '�
         # Получаем первый топоним из ответа геокодера.
         # Согласно описанию ответа, он находится по следующему пути:
         toponym = json_response["response"]["GeoObjectCollection"]["featureMember"][0]["GeoObject"]
-        toponym_province = toponym["metaDataProperty"]["GeocoderMetaData"]["Address"]["Components"][1]["name"]
+        toponym_province = toponym["metaDataProperty"]["GeocoderMetaData"]["Address"]["Components"][2]["name"]
         # Печатаем извлечённые из ответа поля:
         print(town + ':', toponym_province)
     else:
