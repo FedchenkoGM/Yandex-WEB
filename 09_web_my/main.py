@@ -2,6 +2,7 @@ from flask import Flask
 from data import db_session
 from data.users import User
 from data.jobs import Jobs
+from data.departments import Department
 
 
 app = Flask(__name__)
@@ -125,12 +126,49 @@ def main():
     session.add(job)
 
     job = Jobs()
-    job.team_leader = 7
+    job.team_leader = 6
     job.job = 'preventive vaccinations of the crew'
     job.work_size = 7
     job.collaborators = '3'
     job.is_finished = False
     session.add(job)
+
+    department = Department()
+    department.title = "Department of transportation"
+    department.chief = 4
+    department.email = "transport@mars.org"
+    department.members = "26, 37, 19"
+    session.add(department)
+
+    department = Department()
+    department.title = "Department of construction"
+    department.chief = 6
+    department.email = "build@mars.org"
+    department.members = "16, 17, 28"
+    session.add(department)
+
+    department = Department()
+    department.title = "Department of of construction_2"
+    department.chief = 6
+    department.email = "build_2@mars.org"
+    department.members = "9, 13, 18"
+    session.add(department)
+
+    department = Department()
+    department.title = "Department of biological research"
+    department.chief = 3
+    department.email = "bio@mars.org"
+    department.members = "7, 10, 11"
+    session.add(department)
+
+    department = Department()
+    department.title = "Department of geological exploration"
+    department.chief = 2
+    department.email = "geo@mars.org"
+    department.members = "6, 8, 12"
+    department = session.query(Department).filter(Department.id == 1).first()
+    department.members = '3, 4, 5'
+    session.add(department)
 
     session.commit()
 
