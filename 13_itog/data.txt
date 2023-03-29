@@ -1,7 +1,2 @@
-[
-    {"ship": "Ural", "size": 19.8, "datetime": "2023/04/02 11:54"},
-    {"ship": "Giant", "size": 111.0, "datetime": "2023/03/30 8:13"},
-    {"ship": "Nigella", "size": 12.4, "datetime": "2023/04/01 13:02"},
-    {"ship": "Far Stranger", "size": 24, "datetime": "2023/03/31 21:54"},
-    {"ship": "Thunder", "size": 56.8, "datetime": "2023/04/01 3:12"}
-]
+plans.db
+2090
